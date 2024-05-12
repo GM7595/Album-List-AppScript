@@ -8,7 +8,7 @@ function myFunction()
   // Artist Part Starts Here
   //
   var rows = [];
-  var parent = DriveApp.getFolderById('1IClJ-w3GI7xHSF7CizckyyUydYr1_zp9');
+  var parent = DriveApp.getFolderById('');
   Logger.log("Collection Folder: " + parent.getName());
   var myArtists = parent.getFolders();
   //clear the sheet, then create the headers
