@@ -3,12 +3,19 @@ function myFunction()
   //univariables
   var ss = SpreadsheetApp.getActiveSpreadsheet();
   var sheet = ss.getSheets()[0];
+  //
+  // Reset Sheet
+  //
+  for(var i=1; i<ss.getSheets().length; i++)
+  {
+    SpreadsheetApp.getActive().deleteSheet(SpreadsheetApp.getActive().getSheets()[i]);
+  }
   Logger.log("Artist Sheet: " + sheet.getName());
   //
   // Artist Part Starts Here
   //
   var rows = [];
-  var parent = DriveApp.getFolderById(''); //ENTER ID HERE
+  var parent = DriveApp.getFolderById(''); // <- ENTER ID HERE
   Logger.log("Collection Folder: " + parent.getName());
   var myArtists = parent.getFolders();
   //clear the sheet, then create the headers
